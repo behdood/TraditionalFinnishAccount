@@ -1,7 +1,7 @@
-package org.me.testtask.model.exceptions;
+package org.me.testtask.exceptions;
 
 
-public class InvalidBankCodeException extends Exception {
+public class InvalidBankCodeException extends BaseBankAccountNumberException {
     public InvalidBankCodeException(String bankCode) {
         super("Unknown bank code : " + bankCode);
     }
