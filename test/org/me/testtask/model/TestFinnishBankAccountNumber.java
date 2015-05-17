@@ -1,15 +1,10 @@
 package org.me.testtask.model;
 
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-
-import org.me.testtask.exceptions.IncorrectAccountFormatException;
-import org.me.testtask.exceptions.InvalidBankCodeException;
-import org.me.testtask.exceptions.InvalidCheckDigitException;
 
 public class TestFinnishBankAccountNumber {
 
@@ -20,7 +15,7 @@ public class TestFinnishBankAccountNumber {
         String account1_num = "123456-785"; // Nordea (bank group 1)
         String account2_num = "423456-781"; // Sp (bank group 2)
 
-        NationalBankAccountNumber account1, account2;
+        BankAccountNumber account1, account2;
         account1 = BankAccountNumberFactory.getNationalBankAccount(account1_num, finnish_account);
         account2 = BankAccountNumberFactory.getNationalBankAccount(account2_num, finnish_account);
 
@@ -39,35 +34,39 @@ public class TestFinnishBankAccountNumber {
         String account_num2 = "12345-789";
         String account_num3 = "FI1234-789";
 
-        NationalBankAccountNumber account1 =
+        BankAccountNumber account1 =
                 BankAccountNumberFactory.getNationalBankAccount(account_num1, finnish_account);
-        NationalBankAccountNumber account2 =
+        BankAccountNumber account2 =
                 BankAccountNumberFactory.getNationalBankAccount(account_num2, finnish_account);
-        NationalBankAccountNumber account3 =
+        BankAccountNumber account3 =
                 BankAccountNumberFactory.getNationalBankAccount(account_num3, finnish_account);
 
-        assertNull(account1);
-        assertNull(account2);
-        assertNull(account3);
+        assertNullBankAccountNumber(account1);
+        assertNullBankAccountNumber(account2);
+        assertNullBankAccountNumber(account3);
     }
 
     @Test
     public void testFinnishBankAccountNumber_ReturnsNull_UnknownBankCodeReturnsNull() {
         String account_num = "311111-111";
 
-        NationalBankAccountNumber account =
+        BankAccountNumber account =
                 BankAccountNumberFactory.getNationalBankAccount(account_num, finnish_account);
 
-        assertNull(account);
+        assertNullBankAccountNumber(account);
     }
 
     @Test
     public void testFinnishBankAccountNumber_ReturnsNull_IncorrectCheckDigit() {
         String account_num = "123456-789";
 
-        NationalBankAccountNumber account =
+        BankAccountNumber account =
                 BankAccountNumberFactory.getNationalBankAccount(account_num, finnish_account);
 
-        assertNull(account);
+        assertNullBankAccountNumber(account);
+    }
+
+    private boolean assertNullBankAccountNumber(BankAccountNumber accountNumber) {
+        return accountNumber.getShortFormat().equals("") && accountNumber.getLongFormat().equals("");
     }
 }

@@ -6,10 +6,11 @@ import org.me.testtask.exceptions.InvalidBankCodeException;
 import org.me.testtask.exceptions.InvalidCheckDigitException;
 import org.me.testtask.validation.BankAccountNumberValidator;
 
-public class FinnishBankAccountNumber implements NationalBankAccountNumber {
+public class FinnishBankAccountNumber implements BankAccountNumber {
     private String accountNumberShortFormat = "";
     private String accountNumberLongFormat = "";
 
+    // the constructor is NOT public, so from outside the package, it can only be built using the factory class
     FinnishBankAccountNumber(String accountNumber)
             throws InvalidBankCodeException, InvalidCheckDigitException, IncorrectAccountFormatException {
 

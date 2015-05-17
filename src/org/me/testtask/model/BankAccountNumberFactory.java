@@ -8,7 +8,7 @@ public class BankAccountNumberFactory {
 
     public static final int FINNISH_ACCOUNT = 1;
 
-    public static NationalBankAccountNumber getNationalBankAccount(String accountNumber, int country) {
+    public static BankAccountNumber getNationalBankAccount(String accountNumber, int country) {
 
         try {
             if (country == FINNISH_ACCOUNT)

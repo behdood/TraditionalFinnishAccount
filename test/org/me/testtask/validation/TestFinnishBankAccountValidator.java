@@ -1,15 +1,11 @@
 package org.me.testtask.validation;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.me.testtask.exceptions.IncorrectAccountFormatException;
 import org.me.testtask.exceptions.InvalidBankCodeException;
 import org.me.testtask.exceptions.InvalidCheckDigitException;
-import org.me.testtask.model.BankAccountNumberFactory;
 import org.me.testtask.model.FinnishBankAccountNumber;
-import org.me.testtask.model.NationalBankAccountNumber;
 
 import static org.junit.Assert.assertEquals;
 

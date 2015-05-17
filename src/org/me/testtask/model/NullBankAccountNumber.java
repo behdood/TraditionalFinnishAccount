@@ -1,7 +1,7 @@
 package org.me.testtask.model;
 
 
-public class NullBankAccountNumber implements NationalBankAccountNumber {
+public class NullBankAccountNumber implements BankAccountNumber {
     @Override
     public String getLongFormat() {
         return "";

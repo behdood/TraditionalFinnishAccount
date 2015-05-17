@@ -1,7 +1,7 @@
 package org.me.testtask.model;
 
 
-public interface NationalBankAccountNumber {
+public interface BankAccountNumber {
 
     String getLongFormat();
 
