@@ -1,10 +1,10 @@
-package org.me.testtask.model;
+package org.me.server.model;
 
 
-import org.me.testtask.exceptions.IncorrectAccountFormatException;
-import org.me.testtask.exceptions.InvalidBankCodeException;
-import org.me.testtask.exceptions.InvalidCheckDigitException;
-import org.me.testtask.validation.BankAccountNumberValidator;
+import org.me.server.exceptions.IncorrectAccountFormatException;
+import org.me.server.exceptions.InvalidBankCodeException;
+import org.me.server.exceptions.InvalidCheckDigitException;
+import org.me.server.validation.BankAccountNumberValidator;
 
 public class FinnishBankAccountNumber implements BankAccountNumber {
     private String accountNumberShortFormat = "";

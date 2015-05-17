@@ -1,7 +1,9 @@
-package org.me.testtask.model;
+package org.me.server.model;
 
 
 import org.junit.Test;
+import org.me.server.model.BankAccountNumber;
+import org.me.server.model.BankAccountNumberFactory;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

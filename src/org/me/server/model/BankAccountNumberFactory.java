@@ -1,8 +1,8 @@
-package org.me.testtask.model;
+package org.me.server.model;
 
-import org.me.testtask.exceptions.IncorrectAccountFormatException;
-import org.me.testtask.exceptions.InvalidBankCodeException;
-import org.me.testtask.exceptions.InvalidCheckDigitException;
+import org.me.server.exceptions.IncorrectAccountFormatException;
+import org.me.server.exceptions.InvalidBankCodeException;
+import org.me.server.exceptions.InvalidCheckDigitException;
 
 public class BankAccountNumberFactory {
 
@@ -11,7 +11,7 @@ public class BankAccountNumberFactory {
     public static BankAccountNumber getNationalBankAccount(String accountNumber, int country) {
 
         try {
-            if (country == FINNISH_ACCOUNT)
+            if (accountNumber != null && country == FINNISH_ACCOUNT)
                 return new FinnishBankAccountNumber(accountNumber);
         } catch (InvalidBankCodeException ignored) {
         } catch (InvalidCheckDigitException ignored) {

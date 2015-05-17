@@ -1,4 +1,4 @@
-package org.me.testtask.exceptions;
+package org.me.server.exceptions;
 
 
 public class IncorrectAccountFormatException extends BaseBankAccountNumberException {

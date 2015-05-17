@@ -1,4 +1,4 @@
-package org.me.testtask.model;
+package org.me.server.model;
 
 
 public class NullBankAccountNumber implements BankAccountNumber {
